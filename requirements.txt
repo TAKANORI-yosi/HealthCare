@@ -1,4 +1,3 @@
 pandas
 streamlit
 matplotlib
-openpyxl>=3.0.0
