@@ -1,7 +1,6 @@
 # 健康管理ツール(Python+Streamlit/plotly) 
 
 # 必要なモジュールをインポート
-import os
 import pandas as pd
 import numpy as np
 import streamlit as st
