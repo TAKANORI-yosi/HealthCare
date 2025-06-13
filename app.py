@@ -24,11 +24,8 @@ exec_btn =  st.sidebar.button("実行")
 if exec_btn:
 
     try:
-        # Dataフォルダの検索
-        if os.path.isdir("Data"):
-            data_dir = "Data"
-        else:
-            raise ValueError("Dataフォルダが見つかりません。")
+        # Dataフォルダの設定
+        data_dir = "Data"
 
         # 家庭内健康管理データのExcelファイル名を設定
         if name == "孝則":
@@ -236,9 +233,6 @@ if exec_btn:
         st.pyplot(fig)
                 
         #plt.tight_layout()
-
-    except ValueError as e:
-        st.sidebar.error(e)
 
     except Exception as e:
         st.sidebar.error("処理対象とする家庭内健康管理データ(" + 
