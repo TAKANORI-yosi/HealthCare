@@ -124,9 +124,9 @@ if exec_btn:
                             year + '年' + month + '月)')
     
         # 血圧
-        axes1.plot(x1, y1, marker='v', linestyle='-', label='最低血圧(起床時)',
+        axes1.plot(x1, y1, marker='v', linestyle='-', label='最低血圧(起床時) ',
                  color='green', markersize=4)
-        axes1.plot(x1, y2, marker='^', linestyle='-', label='最高血圧(起床時)',
+        axes1.plot(x1, y2, marker='^', linestyle='-', label='最高血圧(起床時) ',
                  color='green', markersize=4)
         axes1.grid()
         #axes1.set_xlabel('日')
@@ -152,13 +152,13 @@ if exec_btn:
         ax1.minorticks_on()
 
          # 凡例の表示
-        ax1.legend(bbox_to_anchor=(1.558, 0.34), loc='upper right',
+        ax1.legend(bbox_to_anchor=(1.55, 0.34), loc='upper right',
                     borderaxespad=0)
 
         # 体温用のy軸追加
         ax2 = axes1.twinx()
         ax2.spines['right'].set_position(('outward', 45))  # 右側にオフセット
-        ax2.plot(x1, y3, marker='o', linestyle='-', label='体温（おでこ）',
+        ax2.plot(x1, y3, marker='o', linestyle='-', label='体温（おでこ）    ',
                    color='red', markersize=3)
         ax2.set_ylabel('体温 ℃', color='red')
         ax2.set_ylim(35,38)
@@ -166,7 +166,7 @@ if exec_btn:
         ax2.minorticks_on()
 
         # 凡例の表示
-        ax2.legend(bbox_to_anchor=(1.532, 0.58), loc='upper right',
+        ax2.legend(bbox_to_anchor=(1.55, 0.58), loc='upper right',
                     borderaxespad=0)
         
         # 2つ目のグラフ
@@ -179,7 +179,7 @@ if exec_btn:
 
         # 基礎代謝
         ax3 = axes2.twinx()
-        ax3.plot(x1, yt6, marker='o', linestyle='-', label='基礎代謝(kcal)',
+        ax3.plot(x1, yt6, marker='o', linestyle='-', label='基礎代謝(kcal)     ',
                    color='red', markersize=3)
         if name == "孝則":
             min_value = 1200
@@ -194,7 +194,7 @@ if exec_btn:
         ax3.minorticks_on()
 
         # 凡例の表示
-        ax3.legend(bbox_to_anchor=(1.54, 1.0), loc='upper right',
+        ax3.legend(bbox_to_anchor=(1.55, 1.0), loc='upper right',
                     borderaxespad=0)
 
         # 体重、体脂肪率、内臓脂肪(レべル)
@@ -211,7 +211,7 @@ if exec_btn:
         ax4.minorticks_on()
 
         # 凡例の表示
-        ax4.legend(bbox_to_anchor=(1.57, 0.75), loc='upper right',
+        ax4.legend(bbox_to_anchor=(1.55, 0.75), loc='upper right',
                     borderaxespad=0)
         
         # 3つ目のグラフ
@@ -220,8 +220,9 @@ if exec_btn:
                 color='orange', markersize=3)
 
         axes3.grid()
-        axes3.set_ylabel('推定骨量')
+        axes3.set_ylabel('推定骨量', color='orange')
         axes3.set_xlabel('日')
+        axes3.tick_params(axis='y', colors='orange')
 
         if name == "孝則":
             axes3.set_ylim(2.0, 3.0)
@@ -230,15 +231,16 @@ if exec_btn:
         axes3.minorticks_on()
 
         # 凡例の表示
-        axes3.legend(bbox_to_anchor=(1.4, 1.0), loc='upper right',
+        axes3.legend(bbox_to_anchor=(1.37, 1.0), loc='upper right',
                     borderaxespad=0)
         
         # 筋肉量
         ax5 = axes3.twinx()
-        ax5.plot(x1, yt3, marker='s', linestyle='-', label='筋肉量(kg)',
+        ax5.plot(x1, yt3, marker='s', linestyle='-', label='筋肉量(kg)    ',
                  color='blue', markersize=3)
         ax5.grid()
-        ax5.set_ylabel('筋肉量')
+        ax5.set_ylabel('筋肉量', color='blue')
+        ax5.tick_params(axis='y', colors='blue')
         if name == "孝則":
             ax5.set_ylim(20, 50)
         else:
@@ -246,7 +248,7 @@ if exec_btn:
         ax5.minorticks_on()
 
         # 凡例の表示
-        ax5.legend(bbox_to_anchor=(1.37, 0.54), loc='upper right',
+        ax5.legend(bbox_to_anchor=(1.37, 0.52), loc='upper right',
                     borderaxespad=0)
 
         # Streamlitで表示
