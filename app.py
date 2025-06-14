@@ -93,6 +93,9 @@ if exec_btn:
             if row[1] == "歩数（ヘルスケアで計測)":
                 yt7 = row[start_index:]
 
+        # キャシュのクリア
+        st.cache_data.clear()
+
         # 日本語フォントを指定 (Windows版専用のため、使用を中止)
         #plt.rcParams['font.family'] = 'MS Gothic'
 
