@@ -152,7 +152,7 @@ if exec_btn:
         ax1.minorticks_on()
 
          # 凡例の表示
-        ax1.legend(bbox_to_anchor=(1.555, 0.34), loc='upper right',
+        ax1.legend(bbox_to_anchor=(1.558, 0.34), loc='upper right',
                     borderaxespad=0)
 
         # 体温用のy軸追加
@@ -252,7 +252,7 @@ if exec_btn:
         # Streamlitで表示
         st.pyplot(fig)
                 
-        #plt.tight_layout()
+        plt.tight_layout()
 
     except Exception as e:
         st.sidebar.error("処理対象とする家庭内健康管理データ(" + 
