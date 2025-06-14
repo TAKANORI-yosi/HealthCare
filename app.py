@@ -24,9 +24,8 @@ from matplotlib.gridspec import GridSpec
 name = st.sidebar.selectbox('あなたの名前', ("孝則","由香"))
 year = st.sidebar.selectbox('測定した年', ("2024","2025","2026"))
 #month = st.sidebar.text_input('グラフ表示する月')
-options = list(range(1, 13))
+options = ("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12")
 month = st.sidebar.selectbox('グラフ表示する月', options)
-month_str = str(month)
 
 # 実行ボタン
 exec_btn =  st.sidebar.button("実行")
@@ -47,7 +46,7 @@ if exec_btn:
         excel_file = data_dir + "/" + name_e + "/" + year + ".xlsx"
 
         # 家庭内健康管理データの読み込み
-        df = pd.read_excel(excel_file, sheet_name = month_str)
+        df = pd.read_excel(excel_file, sheet_name = month)
         # 開始位置を設定
         start_index = 2
         for row in df.values:
@@ -127,7 +126,7 @@ if exec_btn:
 
         # 上のグラフ
         axes1.set_title('家庭内健康管理データの可視化(' + name + ':' +
-                            year + '年' + month_str + '月)')
+                            year + '年' + month + '月)')
     
         # 血圧
         axes1.plot(x1, y1, marker='v', linestyle='-', label='最低血圧(起床時) ',
