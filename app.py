@@ -21,7 +21,8 @@ from matplotlib.gridspec import GridSpec
 #st.title('家庭内健康管理ツール')
 
 # 表示条件の入力
-name = st.sidebar.selectbox('あなたの名前', ("孝則","由香"))
+name = st.sidebar.selectbox('あなたの名前', ("孝則","由香"),
+                            index=None, placeholder="名前を選択")
 year = st.sidebar.selectbox('測定した年',
     ("2024","2025","2026","2027","2028","2029","2030","2031","2032","2033","2034","2035"),
      index=None, placeholder="年を選択")
