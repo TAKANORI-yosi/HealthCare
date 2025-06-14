@@ -152,7 +152,7 @@ if exec_btn:
         ax1.minorticks_on()
 
          # 凡例の表示
-        ax1.legend(bbox_to_anchor=(1.555, 0.35), loc='upper right',
+        ax1.legend(bbox_to_anchor=(1.555, 0.34), loc='upper right',
                     borderaxespad=0)
 
         # 体温用のy軸追加
@@ -166,7 +166,7 @@ if exec_btn:
         ax2.minorticks_on()
 
         # 凡例の表示
-        ax2.legend(bbox_to_anchor=(1.53, 0.59), loc='upper right',
+        ax2.legend(bbox_to_anchor=(1.532, 0.58), loc='upper right',
                     borderaxespad=0)
         
         # 2つ目のグラフ
