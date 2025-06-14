@@ -22,10 +22,10 @@ from matplotlib.gridspec import GridSpec
 
 # 表示条件の入力
 name = st.sidebar.selectbox('あなたの名前', ("孝則","由香"))
-year = st.sidebar.selectbox('測定した年', ("2024","2025","2026"))
 #month = st.sidebar.text_input('グラフ表示する月')
 month = st.sidebar.selectbox('グラフ表示する月', 
             ("1","2","3","4","5","6","7","8","9","10","11","12"))
+year = st.sidebar.selectbox('測定した年', ("2024","2025","2026"))
 
 # 実行ボタン
 exec_btn =  st.sidebar.button("実行")
