@@ -5,8 +5,17 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 import matplotlib.pyplot as plt
+from matplotlib import rcParams
+import matplotlib.font_manager as fm
+
 #matplotlib.gridspecモジュールからGridSpec関数を直接インポート
 from matplotlib.gridspec import GridSpec 
+
+#import matplotlib
+#print(matplotlib.get_cachedir())
+
+#import matplotlib.font_manager as fm
+#print([f.name for f in fm.fontManager.ttflist])
 
 # タイトルの表示
 #st.title('家庭内健康管理ツール')
@@ -84,8 +93,20 @@ if exec_btn:
             if row[1] == "歩数（ヘルスケアで計測)":
                 yt7 = row[start_index:]
 
-        # 日本語フォントを指定
-        plt.rcParams['font.family'] = 'MS Gothic'
+        # 日本語フォントを指定 (Windows版専用のため、使用を中止)
+        #plt.rcParams['font.family'] = 'MS Gothic'
+
+        # フォントファイルのパス
+        FONT_PATH = "fonts/NotoSansJP-Regular.otf"
+
+        # フォントをfontManagerに追加
+        fm.fontManager.addfont(FONT_PATH)
+
+        # FontPropertiesオブジェクト生成（名前の取得のため）
+        font_prop = fm.FontProperties(fname=FONT_PATH)
+
+        # フォントを設定
+        rcParams['font.family'] = font_prop.get_name()
 
         # グラフの描画
         fig = plt.figure()
