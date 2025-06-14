@@ -264,4 +264,4 @@ if exec_btn:
 
     except Exception as e:
         st.sidebar.error("処理対象とする家庭内健康管理データ(" + 
-                        excel_file +")の可視化に失敗しました。: " + e.strerror)
+                        excel_file +")の可視化に失敗しました。(" + e.args[0] + ")")
