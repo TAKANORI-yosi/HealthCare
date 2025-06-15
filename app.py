@@ -107,6 +107,7 @@ if exec_btn:
 
         # フォントファイルのパス
         FONT_PATH = "fonts/NotoSansJP-Regular.otf"
+        #FONT_PATH = "fonts/NotoSansJP-VF.otf"
 
         # フォントをfontManagerに追加
         fm.fontManager.addfont(FONT_PATH)
