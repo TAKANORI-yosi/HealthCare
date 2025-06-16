@@ -11,15 +11,6 @@ import matplotlib.font_manager as fm
 #matplotlib.gridspecモジュールからGridSpec関数を直接インポート
 from matplotlib.gridspec import GridSpec 
 
-#import matplotlib
-#print(matplotlib.get_cachedir())
-
-#import matplotlib.font_manager as fm
-#print([f.name for f in fm.fontManager.ttflist])
-
-# タイトルの表示
-#st.title('家庭内健康管理ツール')
-
 # 表示条件の入力
 name = st.sidebar.selectbox('あなたの名前', ("孝則","由香"),
                             index=None, placeholder="名前を選択")
@@ -71,31 +62,43 @@ if exec_btn:
         for row in df.values:
             if row[1] == "検査項目":
                 x1 = row[start_index:] #日をセット
+                continue
             if row[1] == "最低血圧(起床時)":
                 y1 = row[start_index:]
+                continue
             if row[1] == "最高血圧(起床時)":
                 y2 = row[start_index:]
+                continue
             if row[1] == "体温（おでこ）" and y3_set == False:
                 y3 = row[start_index:]
-                y3_set = True                
+                y3_set = True
+                continue                
             if row[1] == "酸素濃度(%Sp02)" and y4_set == False:
                 y4 = row[start_index:]
                 y4_set = True
+                continue
             if row[1] == "脈拍数(PRbpm)" and y5_set == False:
                 y5 = row[start_index:]
                 y5_set = True
+                continue
             if row[1] == "体重(kg)":
                 yt1 = row[start_index:]
+                continue
             if row[1] == "体脂肪率(％)":
                 yt2 = row[start_index:]
+                continue
             if row[1] == "筋肉量(kg)":
-                yt3 = row[start_index:]                
+                yt3 = row[start_index:]
+                continue                
             if row[1] == "推定骨量(kg)":
                 yt4 = row[start_index:]
+                continue
             if row[1] == "内臓脂肪(レべル)":
                 yt5 = row[start_index:]
+                continue
             if row[1] == "基礎代謝(kcal)":
-                yt6 = row[start_index:]            
+                yt6 = row[start_index:]
+                continue            
             if row[1] == "歩数（ヘルスケアで計測)":
                 yt7 = row[start_index:]
 
