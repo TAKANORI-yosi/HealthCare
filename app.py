@@ -141,19 +141,17 @@ if exec_btn:
                  color='green', markersize=4)
         axes1.plot(x1, y2, marker='^', linestyle='-', label='最高血圧(起床時) ',
                  color='green', markersize=4)
-        axes1.grid()
-        #axes1.set_xlabel('日')
-        #axes1.set_xlim(1,31)
-        axes1.set_ylabel('血圧(mmHg)', color='green')
-        axes1.tick_params(axis='y', colors='green')
-        axes1.minorticks_on()
+        axes1.grid()  # グラフにグリッド線（格子線）を表示
+        axes1.set_ylabel('血圧(mmHg)', color='green') # Y軸のラベルと色を設定
+        axes1.tick_params(axis='y', colors='green') # Y軸の色を設定
+        axes1.minorticks_on() # 主要目盛り（メジャー目盛り）の間に補助的な目盛りを表示
 
         # 凡例の表示
         axes1.legend(bbox_to_anchor=(1.55, 1.0), loc='upper right', 
                         borderaxespad=0)
 
         # 酸素濃度
-        ax1 = axes1.twinx()
+        ax1 = axes1.twinx() # X軸は共有し、Y軸は独立して設定(複数のY軸)
         ax1.plot(x1, y4, marker='s', linestyle="dashed", label='酸素濃度(%Sp02)',
                  color='blue', markersize=3)
 
@@ -169,7 +167,7 @@ if exec_btn:
                     borderaxespad=0)
 
         # 体温用のy軸追加
-        ax2 = axes1.twinx()
+        ax2 = axes1.twinx() # X軸は共有し、Y軸は独立して設定(複数のY軸)
         ax2.spines['right'].set_position(('outward', 45))  # 右側にオフセット
         ax2.plot(x1, y3, marker='o', linestyle='-', label='体温（おでこ）    ',
                    color='red', markersize=3)
@@ -265,9 +263,7 @@ if exec_btn:
                     borderaxespad=0)
 
         # Streamlitで表示
-        st.pyplot(fig)
-                
-        #plt.tight_layout()
+        st.pyplot(fig)                      
 
     except Exception as e:
         st.sidebar.error("処理対象とする家庭内健康管理データ(" + 
