@@ -142,6 +142,15 @@ if exec_btn:
         axes1.plot(x1, y2, marker='^', linestyle='-', label='最高血圧(起床時) ',
                  color='green', markersize=4)
         axes1.grid()  # グラフにグリッド線（格子線）を表示
+
+        # 血圧（60, 100) の罫線の色と線種を変更
+        min_limit = 60
+        max_limit = 100
+        axes1.axhline(y=min_limit, color='red', linestyle='--',
+                       label=f'Y={min_limit}')
+        axes1.axhline(y=max_limit, color='red', linestyle='--',
+                       label=f'Y={max_limit}')
+        
         axes1.set_ylabel('血圧(mmHg)', color='green') # Y軸のラベルと色を設定
         axes1.tick_params(axis='y', colors='green') # Y軸の色を設定
         axes1.minorticks_on() # 主要目盛り（メジャー目盛り）の間に補助的な目盛りを表示
