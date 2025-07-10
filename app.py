@@ -138,9 +138,9 @@ if exec_btn:
     
         # 血圧
         axes1.plot(x1, y1, marker='v', linestyle='-', label='最低血圧(起床時) ',
-                 color='green', markersize=4)
+                 color='green', markersize=3)
         axes1.plot(x1, y2, marker='^', linestyle='-', label='最高血圧(起床時) ',
-                 color='green', markersize=4)
+                 color='green', markersize=3)
         axes1.grid()  # グラフにグリッド線（格子線）を表示
 
         # 血圧（60, 100) の罫線の色と線種を変更
