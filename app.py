@@ -146,10 +146,8 @@ if exec_btn:
         # 血圧（60, 100) の罫線の色と線種を変更
         min_limit = 60
         max_limit = 100
-        axes1.axhline(y=min_limit, color='red', linestyle='--',
-                       label=f'Y={min_limit}')
-        axes1.axhline(y=max_limit, color='red', linestyle='--',
-                       label=f'Y={max_limit}')
+        axes1.axhline(y=min_limit, color='red', linestyle='--')
+        axes1.axhline(y=max_limit, color='red', linestyle='--')
         
         axes1.set_ylabel('血圧(mmHg)', color='green') # Y軸のラベルと色を設定
         axes1.tick_params(axis='y', colors='green') # Y軸の色を設定
@@ -163,6 +161,8 @@ if exec_btn:
         ax1 = axes1.twinx() # X軸は共有し、Y軸は独立して設定(複数のY軸)
         ax1.plot(x1, y4, marker='s', linestyle="dashed", label='酸素濃度(%Sp02)',
                  color='blue', markersize=3)
+        min_ox = 95
+        ax1.axhline(y=min_ox, color='orange', linestyle='--')
 
         # 脈拍数
         ax1.plot(x1, y5, marker= 'x', linestyle="dashed", label='脈拍数(PRbpm)',
