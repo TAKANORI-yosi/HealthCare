@@ -127,6 +127,8 @@ if exec_btn:
         # GridSpecで高さ比率を指定し、縦に3つのグラフを表示
         gs = GridSpec(3, 1, height_ratios=[2, 2, 1], hspace=0.3)  # 高さの比率を設定
 
+        m_size = 2
+
         # 各グラフを作成
         axes1 = fig.add_subplot(gs[0])
         axes2 = fig.add_subplot(gs[1])
@@ -138,9 +140,9 @@ if exec_btn:
     
         # 血圧
         axes1.plot(x1, y1, marker='v', linestyle='-', label='最低血圧(起床時) ',
-                 color='green', markersize=3)
+                 color='green', markersize=m_size)
         axes1.plot(x1, y2, marker='^', linestyle='-', label='最高血圧(起床時) ',
-                 color='green', markersize=3)
+                 color='green', markersize=m_size)
         axes1.grid()  # グラフにグリッド線（格子線）を表示
 
         # 血圧（60, 100) の罫線の色と線種を変更
@@ -160,13 +162,13 @@ if exec_btn:
         # 酸素濃度
         ax1 = axes1.twinx() # X軸は共有し、Y軸は独立して設定(複数のY軸)
         ax1.plot(x1, y4, marker='s', linestyle="dashed", label='酸素濃度(%Sp02)',
-                 color='blue', markersize=3)
+                 color='blue', markersize=m_size)
         min_ox = 95
         ax1.axhline(y=min_ox, color='orange', linestyle='--')
 
         # 脈拍数
         ax1.plot(x1, y5, marker= 'x', linestyle="dashed", label='脈拍数(PRbpm)',
-                color='orange', markersize=3)
+                color='orange', markersize=m_size)
         ax1.set_ylabel('酸素濃度/脈拍数')
         ax1.set_ylim(60,100)
         ax1.minorticks_on()
@@ -179,7 +181,7 @@ if exec_btn:
         ax2 = axes1.twinx() # X軸は共有し、Y軸は独立して設定(複数のY軸)
         ax2.spines['right'].set_position(('outward', 45))  # 右側にオフセット
         ax2.plot(x1, y3, marker='o', linestyle='-', label='体温（おでこ）    ',
-                   color='red', markersize=3)
+                   color='red', markersize=m_size)
         ax2.set_ylabel('体温 ℃', color='red')
         ax2.set_ylim(35,38)
         ax2.tick_params(axis='y', colors='red')
@@ -200,7 +202,7 @@ if exec_btn:
         # 基礎代謝
         ax3 = axes2.twinx()
         ax3.plot(x1, yt6, marker='o', linestyle='-', label='基礎代謝(kcal)     ',
-                   color='red', markersize=3)
+                   color='red', markersize=m_size)
         if name == "孝則":
             min_value = 1200
             max_value = 1400
@@ -220,11 +222,11 @@ if exec_btn:
         # 体重、体脂肪率、内臓脂肪(レべル)
         ax4 = axes2.twinx()
         ax4.plot(x1, yt1, marker='v', linestyle='-', label='体重(kg)',
-                 color='green', markersize=3)
+                 color='green', markersize=m_size)
         ax4.plot(x1, yt2, marker='^', linestyle='-', label='体脂肪率(％)',
-                 color='green', markersize=3)
+                 color='green', markersize=m_size)
         ax4.plot(x1, yt5, marker= 'o', linestyle="dashed", label='内臓脂肪(レべル)',
-                color='blue', markersize=3)    
+                color='blue', markersize=m_size)    
         ax4.grid()
         ax4.set_ylabel('値')
         ax4.set_ylim(0, 80)        
@@ -237,7 +239,7 @@ if exec_btn:
         # 3つ目のグラフ
         # 推定骨量(kg)
         axes3.plot(x1, yt4, marker= 'o', linestyle="dashed", label='推定骨量(kg)',
-                color='orange', markersize=3)
+                color='orange', markersize=m_size)
 
         axes3.grid()
         axes3.set_ylabel('推定骨量', color='orange')
@@ -257,7 +259,7 @@ if exec_btn:
         # 筋肉量
         ax5 = axes3.twinx()
         ax5.plot(x1, yt3, marker='s', linestyle='-', label='筋肉量(kg)    ',
-                 color='blue', markersize=3)
+                 color='blue', markersize=m_size)
         ax5.grid()
         ax5.set_ylabel('筋肉量', color='blue')
         ax5.tick_params(axis='y', colors='blue')
